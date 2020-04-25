@@ -1,0 +1,31 @@
+
+
+body {
+  background-image: url(titlepage/titlepagenodotnotext.png);
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  height: 100vh
+}
+
+div {
+height: 100px;
+width: 100px;
+}
+
+
+#mainbg {
+  position: absolute;
+  top: 190px;
+  left: calc(50vw - 49px);
+  z-index: 2;
+}
+
+#text {
+  position: absolute;
+  top: 190px;
+  left: calc(50vw - 49px);
+  z-index: 1;
+}
