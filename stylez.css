@@ -11,21 +11,34 @@ body {
 }
 
 div {
-height: 100px;
-width: 100px;
+
 }
 
+.responsive {
+  width: 100%;
+  height: auto;
+}
 
 #mainbg {
   position: absolute;
-  top: 190px;
-  left: calc(50vw - 49px);
+  top: calc(50vh - 200px);
+  left: calc(50vw + 49px);
   z-index: 2;
+}
+
+#mainbg img {
+  height: 400px;
+  width: 400px;
 }
 
 #text {
   position: absolute;
-  top: 190px;
-  left: calc(50vw - 49px);
+  top: calc(50vh - 180px);
+  left: calc(50vw + 49px);
   z-index: 1;
+}
+
+#text img {
+  height: 400px;
+  width: 400px;
 }
