@@ -7,7 +7,6 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: fixed;
-  height: 100vh
 }
 
 div {
@@ -17,6 +16,7 @@ div {
 .responsive img {
   max-width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
 #mainbg {
