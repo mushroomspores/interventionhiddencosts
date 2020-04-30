@@ -10,65 +10,75 @@
 
 #mainbg {
   position: absolute;
-  top: calc(50vh - 200px);
-  left: calc(50vw + 49px);
+  top: calc(50vh - 210px);
+  left: calc(50vw + 59px);
   z-index: 1;
 }
 
 #mainbg img {
-  height: 400px;
-  width: 400px;
+  height: 420px;
 }
 
 #text {
   position: absolute;
-  top: calc(50vh - 180px);
-  left: calc(50vw + 49px);
+  top: calc(50vh - 190px);
+  left: calc(50vw + 59px);
   z-index: 2;
 }
 
 #text img {
-  height: 400px;
-  width: 400px;
+  height: 420px;
 }
 
 #nexttol2 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 240px);
-  left: calc(50vw - 18px);
+  top: calc(50vh + 200px);
+  left: calc(50vw - 40px);
+  font-size: 45px;
+  opacity: 0;
 }
 #backtotitle {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
   top: calc(50vh + 280px);
-  left: calc(50vw - 18px);
+  left: calc(50vw - 25px);
+  font-size: 25px;
+  opacity: 0;
 }
 
 #nexttol3 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 240px);
-  left: calc(50vw - 18px);
+  top: calc(50vh + 200px);
+  left: calc(50vw - 40px);
+  font-size: 45px;
+  opacity: 0;
 }
 #backtol1 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
   top: calc(50vh + 280px);
-  left: calc(50vw - 18px);
+  left: calc(50vw - 25px);
+  font-size: 25px;
+  opacity: 0;
 }
 
 #nexttol4 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 240px);
-  left: calc(50vw - 18px);
+  top: calc(50vh + 206px);
+  left: calc(50vw - 40px);
+  font-size: 43px;
+  opacity: 0;
 }
 #backtol2 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
   top: calc(50vh + 280px);
-  left: calc(50vw - 18px);
+  left: calc(50vw - 25px);
+  font-size: 25px;
+  opacity: 0;
 }
 #sofaoutline img {
   position: absolute;
@@ -89,45 +99,56 @@
   height: 93px;
 }
 
-
 #nexttol5 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 240px);
-  left: calc(50vw - 18px);
+  top: calc(50vh + 210px);
+  left: calc(50vw - 45px);
+  font-size: 45px;
+  opacity: 0;
 }
 #backtol3 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
   top: calc(50vh + 280px);
-  left: calc(50vw - 18px);
+  left: calc(50vw - 25px);
+  font-size: 25px;
+  opacity: 0;
 }
 
 #nexttol6 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 240px);
-  left: calc(50vw - 18px);
+  top: calc(50vh + 200px);
+  left: calc(50vw - 45px);
+  font-size: 45px;
+  opacity: 0;
 }
 #backtol4 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
   top: calc(50vh + 280px);
-  left: calc(50vw - 18px);
+  left: calc(50vw - 25px);
+  font-size: 25px;
+  opacity: 0;
 }
 
 #nexttol7 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 230px);
-  left: calc(50vw - 18px);
-  z-index: 1;
+  top: calc(50vh + 200px);
+  left: calc(50vw - 20px);
+  font-size: 43px;
+  opacity: 0;
+  z-index: 3;
 }
 #backtol5 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
   top: calc(50vh + 280px);
-  left: calc(50vw - 18px);
+  left: calc(50vw - 20px);
+  font-size: 22px;
+  opacity: 0;
   z-index: 2;
 }
 #l6modsofaoutline img {
@@ -135,33 +156,41 @@
   top: calc(50vh + 130px);
   left: calc(50vw - 173px);
   height: 175px;
-  z-index: 3;
+  z-index: 1;
 }
 
 #nexttol8 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 240px);
-  left: calc(50vw - 18px);
+  top: calc(50vh + 200px);
+  left: calc(50vw - 40px);
+  font-size: 43px;
+  opacity: 0;
 }
 #backtol6 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
   top: calc(50vh + 280px);
-  left: calc(50vw - 18px);
+  left: calc(50vw - 25px);
+  font-size: 25px;
+  opacity: 0;
 }
 
 #nexttol9 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 230px);
-  left: calc(50vw - 15px);
+  top: calc(50vh + 200px);
+  left: calc(50vw - 40px);
+  font-size: 43px;
+  opacity: 0;
 }
 #backtol7 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
   top: calc(50vh + 280px);
-  left: calc(50vw - 15px);
+  left: calc(50vw - 25px);
+  font-size: 25px;
+  opacity: 0;
 }
 #stooloutline img {
   position: absolute;
@@ -209,14 +238,18 @@
 #nexttol10 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 245px);
-  left: calc(50vw - 15px);
+  top: calc(50vh + 200px);
+  left: calc(50vw - 40px);
+  font-size: 55px;
+  opacity: 0;
 }
 #backtol8 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 285px);
-  left: calc(50vw - 15px);
+  top: calc(50vh + 280px);
+  left: calc(50vw - 25px);
+  font-size: 25px;
+  opacity: 0;
 }
 #lchairoutline img {
   position: absolute;
@@ -238,12 +271,16 @@
 #returntotitle {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 230px);
-  left: calc(50vw - 15px);
+  top: calc(50vh + 200px);
+  left: calc(50vw - 40px);
+  font-size: 43px;
+  opacity: 0;
 }
 #backtol9 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
-  top: calc(50vh + 285px);
-  left: calc(50vw - 15px);
+  top: calc(50vh + 280px);
+  left: calc(50vw - 25px);
+  font-size: 25px;
+  opacity: 0;
 }
