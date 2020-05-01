@@ -3,16 +3,6 @@
   <head>
     <link rel="stylesheet" href="stylez.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        background-image: url(locations/location6.png);
-        background-color: black;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-attachment: fixed;
-      }
-    </style>
   </head>
 
   <body>
@@ -23,11 +13,99 @@
       <a href="location5.html">Back</a>
     </div>
 
-    <div id="l6modsofaoutline">
-      <img src="location6outlines/l6modsofaoutline.png">
-    </div>
+    <img src="locations/location6.png" id="bg">
+    <img src="location6outlines/l6modsofaoutline.png" id="l6modsofaoutline" >
+    <img src="location3outlines/bchairoutline.png" id="overlay">
 
+    <script>
 
+      /*
+        1. got rid of body styles, so no longer have background image
+        2. created img elements for background, outline && overlay
+        3. created variables for all of those images inside our JavaScript
+        4. created variables for the proportional relationship between our outlines && background img
+        5. created some functions...
+          - change our outline img src attribute when we hover (overl6, outl6)
+          - showing && hiding the overlay (showOverlay, hideOverlay)
+          - created function to open the link to the price page (openLink)
+        6. created event listeners to fire specific functions on specific user actions
+        7. created placeBG funciton, to position && resize background img && outline imgs
+
+      */
+
+      const bg = document.querySelector('#bg')
+      const l6ol = document.querySelector('#l6modsofaoutline')
+      const l6ov = document.querySelector('#overlay')
+
+      const bgVSl60lHeight = l6ol.height / bg.height
+      const bgVSl60lWidth = l6ol.width / bg.width
+
+      function showOverlay (e) {
+        l6ov.style.position = 'absolute'
+        l6ov.style.zIndex = 3
+        l6ov.style.top = (innerHeight / 2) - (l6ov.height / 2) + 'px'
+        l6ov.style.left = (innerWidth / 2) - (l6ov.width / 2) + 'px'
+        l6ov.style.display = 'block'
+      }
+
+      function hideOverlay () {
+        l6ov.style.display = 'none'
+      }
+
+      function overl6 () {
+        l6ol.style.cursor = 'pointer'
+        l6ol.src = 'location6outlines/l6modsofaoutline2.png'
+      }
+
+      function outl6 () {
+        l6ol.src = 'location6outlines/l6modsofaoutline.png'
+      }
+
+      function placeBG () {
+        const bgAR = bg.width / bg.height
+        const l6olAR = l6ol.width / l6ol.height
+        const winAR = innerWidth / innerHeight
+        bg.style.position = 'absolute'
+        l6ol.style.position = 'absolute'
+        l6ol.style.zIndex = 2
+        if (winAR > bgAR) { // when screen is wider than bg ratio
+          bg.style.width = innerHeight * bgAR + 'px'
+          bg.style.height = innerHeight + 'px'
+          l6ol.style.width = bgVSl60lWidth * innerHeight * bgAR + 'px'
+          l6ol.style.height = bgVSl60lHeight * innerHeight + 'px'
+          bg.style.top = '0px'
+          bg.style.left = (innerWidth / 2) - (bg.width / 2) + 'px'
+          l6ol.style.top = '67vh'
+          l6ol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.38) + 'px'
+        } else { // when screen is tighter than bg ratio
+          bg.style.width = innerWidth + 'px'
+          bg.style.height = innerWidth / bgAR + 'px'
+          l6ol.style.width = bgVSl60lWidth * innerWidth + 'px'
+          l6ol.style.height = bgVSl60lHeight * (innerWidth / bgAR) + 'px'
+          bg.style.top = (innerHeight / 2) - (bg.height / 2) + 'px'
+          bg.style.left = '0px'
+          l6ol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.67) + 'px'
+          l6ol.style.left = '38vw'
+        }
+      }
+
+      function openLink () {
+        const url = 'http://saic.edu'
+        const win = window.open(url, '_blank')
+        win.focus()
+      }
+
+      placeBG()
+      hideOverlay()
+
+      window.addEventListener('resize', placeBG)
+      l6ol.addEventListener('mouseover', overl6)
+      l6ol.addEventListener('mouseout', outl6)
+      l6ol.addEventListener('click', showOverlay)
+      l6ov.addEventListener('click', openLink)
+      bg.addEventListener('click', hideOverlay)
+
+    </script>
   </body>
 
 </html>
