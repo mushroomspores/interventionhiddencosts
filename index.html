@@ -12,8 +12,8 @@
       const bg = document.querySelector('#bg')
       const text = document.querySelector('#text')
 
-      const bgVStextHeight = enter.height / bg.height
-      const bgVStextWidth = enter.width / bg.width
+      const bgVStextHeight = text.height / bg.height
+      const bgVStextWidth = text.width / bg.width
 
       function placeBG () {
         const bgAR = bg.width / bg.height
@@ -29,8 +29,8 @@
           text.style.height = bgVStextHeight * innerHeight + 'px'
           bg.style.top = '0px'
           bg.style.left = (innerWidth / 2) - (bg.width / 2) + 'px'
-          text.style.top = '10vh'
-          text.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.38) + 'px'
+          text.style.top = '34vh'
+          text.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.58) + 'px'
         } else { // when screen is tighter than bg ratio
           bg.style.width = innerWidth + 'px'
           bg.style.height = innerWidth / bgAR + 'px'
@@ -38,8 +38,8 @@
           text.style.height = bgVStextHeight * (innerWidth / bgAR) + 'px'
           bg.style.top = (innerHeight / 2) - (bg.height / 2) + 'px'
           bg.style.left = '0px'
-          text.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.67) + 'px'
-          text.style.left = '10vw'
+          text.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.34) + 'px'
+          text.style.left = '58vw'
         }
       }
 
