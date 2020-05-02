@@ -3,16 +3,6 @@
   <head>
     <link rel="stylesheet" href="stylez.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        background-image: url(locations/location9.png);
-        background-color: black;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-attachment: fixed;
-      }
-    </style>
   </head>
 
   <body>
@@ -23,12 +13,119 @@
       <a href="location8.html">Back</a>
     </div>
 
-    <div id="lchairoutline">
-      <img src="location9outlines/lchairoutline.png">
-    </div>
-    <div id="ltableoutline">
-      <img src="location9outlines/ltableoutline.png">
-    </div>
+    <img src="locations/location9.png" id="bg">
+    <img src="location9outlines/lchairoutline.png" id="lchairoutline">
+    <img src="location9outlines/lchairprice.png" id="lchairoverlay">
+    <img src="location9outlines/ltableoutline.png" id="ltableoutline">
+    <img src="location9outlines/ltableprice.png" id="ltableoverlay">
+
+
+    <script>
+    const bg = document.querySelector('#bg')
+    const lchairol = document.querySelector('#lchairoutline')
+    const lchairov = document.querySelector('#lchairoverlay')
+    const ltableol = document.querySelector('#ltableoutline')
+    const ltableov = document.querySelector('#ltableoverlay')
+
+    const bgVSlchairolHeight = lchairol.height / bg.height
+    const bgVSlchairolWidth = lchairol.width / bg.width
+    const bgVSltableolHeight = ltableol.height / bg.height
+    const bgVSltableolWidth = ltableol.width / bg.width
+
+    function showOverlay (e) {
+      lchairov.style.position = 'absolute'
+      lchairov.style.zIndex = 3
+      lchairov.style.top = (innerHeight / 2) - (lchairov.height / 2) + 'px'
+      lchairov.style.left = (innerWidth / 2) - (lchairov.width / 2) + 'px'
+      lchairov.style.display = 'block'
+
+      ltableov.style.position = 'absolute'
+      ltableov.style.zIndex = 5
+      ltableov.style.top = (innerHeight / 2) - (ltableov.height / 2) + 'px'
+      ltableov.style.left = (innerWidth / 2) - (ltableov.width / 2) + 'px'
+      ltableov.style.display = 'block'
+    }
+
+    function hideOverlay () {
+      lchairov.style.display = 'none'
+      ltableov.style.display = 'none'
+    }
+
+    function overLchairol () {
+      lchairol.style.cursor = 'pointer'
+      lchairol.src = 'location9outlines/b_lchairoutline.png'
+    }
+    function overLtableol () {
+      ltableol.style.cursor = 'pointer'
+      ltableol.src = 'location9outlines/b_ltableoutline.png'
+    }
+
+    function out () {
+      lchairol.src = 'location9outlines/lchairoutline.png'
+      ltableol.src = 'location9outlines/ltableoutline.png'
+    }
+
+    function placeBG () {
+      const bgAR = bg.width / bg.height
+      const lchairolAR = lchairol.width / lchairol.height
+      const ltableolAR = ltableol.width / ltableol.height
+      const winAR = innerWidth / innerHeight
+      lchairol.style.position = 'absolute'
+      lchairol.style.zIndex = 2
+      ltableol.style.position = 'absolute'
+      ltableol.style.zIndex = 4
+      if (winAR > bgAR) { // when screen is wider than bg ratio
+        bg.style.width = innerHeight * bgAR + 'px'
+        bg.style.height = innerHeight + 'px'
+        lchairol.style.width = bgVSlchairolWidth * innerHeight * bgAR + 'px'
+        lchairol.style.height = bgVSlchairolHeight * innerHeight + 'px'
+        ltableol.style.width = bgVSltableolWidth * innerHeight * bgAR + 'px'
+        ltableol.style.height = bgVSltableolHeight * innerHeight + 'px'
+        bg.style.top = '0px'
+        bg.style.left = (innerWidth / 2) - (bg.width / 2) + 'px'
+        lchairol.style.top = '57.3vh'
+        lchairol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.78) + 'px'
+        ltableol.style.top = '57.5vh'
+        ltableol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.802) + 'px'
+      } else { // when screen is tighter than bg ratio
+        bg.style.width = innerWidth + 'px'
+        bg.style.height = innerWidth / bgAR + 'px'
+        lchairol.style.width = bgVSlchairolWidth * innerWidth + 'px'
+        lchairol.style.height = bgVSlchairolHeight * (innerWidth / bgAR) + 'px'
+        ltableol.style.width = bgVSltableolWidth * innerWidth + 'px'
+        ltableol.style.height = bgVSltableolHeight * (innerWidth / bgAR) + 'px'
+        bg.style.top = (innerHeight / 2) - (bg.height / 2) + 'px'
+        bg.style.left = '0px'
+        lchairol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.573) + 'px'
+        lchairol.style.left = '78vw'
+        ltableol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.575) + 'px'
+        ltableol.style.left = '80.2vw'
+      }
+    }
+
+    function openLink () {
+      const urllchair = 'https://store.hermanmiller.com/dining/dining-chairs/eames-molded-plastic-wire-base-side-chair-dsr/1153.html?lang=en_US'
+      const winlchair = window.open(urllchair, '_blank')
+      const urlltable = 'https://store.hermanmiller.com/dining/dining-tables/eames-rectangular-segmented-table/104.html?lang=en_US'
+      const winltable = window.open(urlltable, '_blank')
+      win.focus()
+    }
+
+    placeBG()
+    hideOverlay()
+
+    window.addEventListener('resize', placeBG)
+    lchairol.addEventListener('mouseover', overLchairol)
+    lchairol.addEventListener('mouseout', out)
+    lchairol.addEventListener('click', showOverlay)
+    lchairov.addEventListener('click', openLink)
+    ltableol.addEventListener('mouseover', overLtableol)
+    ltableol.addEventListener('mouseout', out)
+    ltableol.addEventListener('click', showOverlay)
+    ltableov.addEventListener('click', openLink)
+    bg.addEventListener('click', hideOverlay)
+
+    </script>
 
 
   </body>

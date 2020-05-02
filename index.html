@@ -2,27 +2,52 @@
 
   <head>
     <link rel="stylesheet" href="stylez.css">
-
-    <style>
-      body {
-        background-image: url(titlepage/titlepagenodotnotext.png);
-        background-color: black;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-attachment: fixed;
-      }
-    </style>
-
   </head>
 
   <body>
-    <div id="mainbg" class="responsive">
-      <img src="titlepage/dottedcircle.png">
-    </div>
-    <div id="text" class="responsive">
-      <a href="location1.html"><img src="titlepage/entervirtualtour.png"></a>
-    </div>
+    <img src="titlepage/titlepagebg.png" id="bg">
+    <a href="location1.html"><img src="titlepage/entervirtualtour.png" id="text"></a>
+
+    <script>
+      const bg = document.querySelector('#bg')
+      const text = document.querySelector('#text')
+
+      const bgVStextHeight = enter.height / bg.height
+      const bgVStextWidth = enter.width / bg.width
+
+      function placeBG () {
+        const bgAR = bg.width / bg.height
+        const textAR = text.width / text.height
+        const winAR = innerWidth / innerHeight
+        bg.style.position = 'absolute'
+        text.style.position = 'absolute'
+        text.style.zIndex = 2
+        if (winAR > bgAR) { // when screen is wider than bg ratio
+          bg.style.width = innerHeight * bgAR + 'px'
+          bg.style.height = innerHeight + 'px'
+          text.style.width = bgVStextWidth * innerHeight * bgAR + 'px'
+          text.style.height = bgVStextHeight * innerHeight + 'px'
+          bg.style.top = '0px'
+          bg.style.left = (innerWidth / 2) - (bg.width / 2) + 'px'
+          text.style.top = '10vh'
+          text.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.38) + 'px'
+        } else { // when screen is tighter than bg ratio
+          bg.style.width = innerWidth + 'px'
+          bg.style.height = innerWidth / bgAR + 'px'
+          text.style.width = bgVStextWidth * innerWidth + 'px'
+          text.style.height = bgVStextHeight * (innerWidth / bgAR) + 'px'
+          bg.style.top = (innerHeight / 2) - (bg.height / 2) + 'px'
+          bg.style.left = '0px'
+          text.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.67) + 'px'
+          text.style.left = '10vw'
+        }
+      }
+
+      placeBG()
+
+      window.addEventListener('resize', placeBG)
+
+    </script>
 
   </body>
 

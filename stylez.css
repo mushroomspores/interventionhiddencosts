@@ -5,34 +5,6 @@ body {
   margin: 0;
 }
 
-.responsive img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-#mainbg {
-  position: absolute;
-  top: calc(50vh - 210px);
-  left: calc(50vw + 59px);
-  z-index: 1;
-}
-
-#mainbg img {
-  height: 420px;
-}
-
-#text {
-  position: absolute;
-  top: calc(50vh - 190px);
-  left: calc(50vw + 59px);
-  z-index: 2;
-}
-
-#text img {
-  height: 420px;
-}
-
 #nexttol2 {
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
@@ -74,6 +46,7 @@ body {
   left: calc(50vw - 40px);
   font-size: 43px;
   opacity: 0;
+  z-index: 8;
 }
 #backtol2 {
   font-family: 'Roboto Condensed', sans-serif;
@@ -82,24 +55,7 @@ body {
   left: calc(50vw - 25px);
   font-size: 25px;
   opacity: 0;
-}
-#sofaoutline img {
-  position: absolute;
-  top: calc(50vh + 5px);
-  left: calc(50vw - 310px);
-  height: 67px;
-}
-#modsofaoutline img {
-  position: absolute;
-  top: calc(50vh + 170px);
-  left: calc(50vw + 200px);
-  height: 210px;
-}
-#chairoutline img {
-  position: absolute;
-  top: calc(50vh + 43px);
-  left: calc(50vw + 520px);
-  height: 93px;
+  z-index: 9;
 }
 
 #nexttol5 {
@@ -154,13 +110,6 @@ body {
   opacity: 0;
   z-index: 2;
 }
-#l6modsofaoutline img {
-  position: absolute;
-  top: calc(50vh + 130px);
-  left: calc(50vw - 173px);
-  height: 175px;
-  z-index: 1;
-}
 
 #nexttol8 {
   font-family: 'Roboto Condensed', sans-serif;
@@ -186,6 +135,7 @@ body {
   left: calc(50vw - 40px);
   font-size: 43px;
   opacity: 0;
+  z-index: 15;
 }
 #backtol7 {
   font-family: 'Roboto Condensed', sans-serif;
@@ -194,49 +144,9 @@ body {
   left: calc(50vw - 25px);
   font-size: 25px;
   opacity: 0;
+  z-index: 14;
 }
-#stooloutline img {
-  position: absolute;
-  top: calc(50vh + 130px);
-  left: calc(50vw - 400px);
-  height: 120px;
-  z-index: 1;
-}
-#rectsofaoutline img {
-  position: absolute;
-  top: calc(50vh + 62px);
-  left: calc(50vw - 376px);
-  height: 155px;
-  z-index: 2;
-}
-#stableoutline img {
-  position: absolute;
-  top: calc(50vh + 50px);
-  left: calc(50vw - 597px);
-  height: 107px;
-  z-index: 3;
-}
-#schairoutline img {
-  position: absolute;
-  top: calc(50vh + 30px);
-  left: calc(50vw - 415px);
-  height: 87px;
-  z-index: 4;
-}
-#boothoutline img {
-  position: absolute;
-  top: 50vh;
-  left: calc(50vw - 408px);
-  height: 50px;
-  z-index: 5;
-}
-#highstooloutline img {
-  position: absolute;
-  top: calc(50vh + 11px);
-  left: calc(50vw - 140px);
-  height: 50px;
-  z-index: 6;
-}
+
 
 #nexttol10 {
   font-family: 'Roboto Condensed', sans-serif;
@@ -245,6 +155,7 @@ body {
   left: calc(50vw - 40px);
   font-size: 55px;
   opacity: 0;
+  z-index: 7;
 }
 #backtol8 {
   font-family: 'Roboto Condensed', sans-serif;
@@ -253,20 +164,7 @@ body {
   left: calc(50vw - 25px);
   font-size: 25px;
   opacity: 0;
-}
-#lchairoutline img {
-  position: absolute;
-  top: calc(50vh + 53px);
-  left: calc(50vw + 400px);
-  height: 110px;
-  z-index: 1;
-}
-#ltableoutline img {
-  position: absolute;
-  top: calc(50vh + 53px);
-  left: calc(50vw + 423px);
-  height: 155px;
-  z-index: 1;
+  z-index: 8;
 }
 
 

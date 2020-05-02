@@ -15,7 +15,7 @@
 
     <img src="locations/location6.png" id="bg">
     <img src="location6outlines/l6modsofaoutline.png" id="l6modsofaoutline" >
-    <img src="location3outlines/bchairoutline.png" id="overlay">
+    <img src="location3outlines/modsofaprice.png" id="overlay">
 
     <script>
 
@@ -37,8 +37,8 @@
       const l6ol = document.querySelector('#l6modsofaoutline')
       const l6ov = document.querySelector('#overlay')
 
-      const bgVSl60lHeight = l6ol.height / bg.height
-      const bgVSl60lWidth = l6ol.width / bg.width
+      const bgVSl6olHeight = l6ol.height / bg.height
+      const bgVSl6olWidth = l6ol.width / bg.width
 
       function showOverlay (e) {
         l6ov.style.position = 'absolute'
@@ -71,8 +71,8 @@
         if (winAR > bgAR) { // when screen is wider than bg ratio
           bg.style.width = innerHeight * bgAR + 'px'
           bg.style.height = innerHeight + 'px'
-          l6ol.style.width = bgVSl60lWidth * innerHeight * bgAR + 'px'
-          l6ol.style.height = bgVSl60lHeight * innerHeight + 'px'
+          l6ol.style.width = bgVSl6olWidth * innerHeight * bgAR + 'px'
+          l6ol.style.height = bgVSl6olHeight * innerHeight + 'px'
           bg.style.top = '0px'
           bg.style.left = (innerWidth / 2) - (bg.width / 2) + 'px'
           l6ol.style.top = '67vh'
@@ -80,8 +80,8 @@
         } else { // when screen is tighter than bg ratio
           bg.style.width = innerWidth + 'px'
           bg.style.height = innerWidth / bgAR + 'px'
-          l6ol.style.width = bgVSl60lWidth * innerWidth + 'px'
-          l6ol.style.height = bgVSl60lHeight * (innerWidth / bgAR) + 'px'
+          l6ol.style.width = bgVSl6olWidth * innerWidth + 'px'
+          l6ol.style.height = bgVSl6olHeight * (innerWidth / bgAR) + 'px'
           bg.style.top = (innerHeight / 2) - (bg.height / 2) + 'px'
           bg.style.left = '0px'
           l6ol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.67) + 'px'
