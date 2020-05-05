@@ -6,12 +6,6 @@
   </head>
 
   <body>
-    <div id="nexttol9">
-      <a href="location9.html">Next</a>
-    </div>
-    <div id="backtol7">
-      <a href="location7.html">Back</a>
-    </div>
 
     <img src="locations/location8.png" id="bg">
     <img src="location8outlines/stooloutline.png" id="stooloutline">
@@ -26,6 +20,8 @@
     <img src="location8outlines/boothprice.png" id="boothoverlay">
     <img src="location8outlines/highstooloutline.png" id="highstooloutline">
     <img src="location8outlines/highstoolprice.png" id="highstooloverlay">
+    <img src="location8outlines/next.png" id="nexttol9">
+    <img src="location8outlines/back.png" id="backtol7">
 
 
     <script>
@@ -42,6 +38,8 @@
     const boothov = document.querySelector('#boothoverlay')
     const highstoolol = document.querySelector('#highstooloutline')
     const highstoolov = document.querySelector('#highstooloverlay')
+    const next = document.querySelector('#nexttol9')
+    const back = document.querySelector('#backtol7')
 
     const bgVSstoololHeight = stoolol.height / bg.height
     const bgVSstoololWidth = stoolol.width / bg.width
@@ -55,38 +53,47 @@
     const bgVSbootholWidth = boothol.width / bg.width
     const bgVShighstoololHeight = highstoolol.height / bg.height
     const bgVShighstoololWidth = highstoolol.width / bg.width
+    const bgVSnextHeight = next.height/bg.height
+    const bgVSnextWidth = next.width/bg.width
+    const bgVSbackHeight = back.height/bg.height
+    const bgVSbackWidth = back.width/bg.width
 
-    function showOverlay (e) {
+    function showStoolovOverlay (e) {
       stoolov.style.position = 'absolute'
-      stoolov.style.zIndex = 5
+      stoolov.style.zIndex = 9
       stoolov.style.top = (innerHeight / 2) - (stoolov.height / 2) + 'px'
       stoolov.style.left = (innerWidth / 2) - (stoolov.width / 2) + 'px'
       stoolov.style.display = 'block'
-
+    }
+    function showRectsofaovOverlay (e) {
       rectsofaov.style.position = 'absolute'
-      rectsofaov.style.zIndex = 3
+      rectsofaov.style.zIndex = 8
       rectsofaov.style.top = (innerHeight / 2) - (rectsofaov.height / 2) + 'px'
       rectsofaov.style.left = (innerWidth / 2) - (rectsofaov.width / 2) + 'px'
       rectsofaov.style.display = 'block'
-
+    }
+    function showStableovOverlay (e) {
       stableov.style.position = 'absolute'
-      stableov.style.zIndex = 7
+      stableov.style.zIndex = 10
       stableov.style.top = (innerHeight / 2) - (stableov.height / 2) + 'px'
       stableov.style.left = (innerWidth / 2) - (stableov.width / 2) + 'px'
       stableov.style.display = 'block'
-
+    }
+    function showSchairovOverlay (e) {
       schairov.style.position = 'absolute'
-      schairov.style.zIndex = 11
+      schairov.style.zIndex = 12
       schairov.style.top = (innerHeight / 2) - (schairov.height / 2) + 'px'
       schairov.style.left = (innerWidth / 2) - (schairov.width / 2) + 'px'
       schairov.style.display = 'block'
-
+    }
+    function showBoothovOverlay (e) {
       boothov.style.position = 'absolute'
-      boothov.style.zIndex = 9
+      boothov.style.zIndex = 11
       boothov.style.top = (innerHeight / 2) - (boothov.height / 2) + 'px'
       boothov.style.left = (innerWidth / 2) - (boothov.width / 2) + 'px'
       boothov.style.display = 'block'
-
+    }
+    function showHighstoolovOverlay (e) {
       highstoolov.style.position = 'absolute'
       highstoolov.style.zIndex = 13
       highstoolov.style.top = (innerHeight / 2) - (highstoolov.height / 2) + 'px'
@@ -107,25 +114,59 @@
       stoolol.style.cursor = 'pointer'
       stoolol.src = 'location8outlines/b_stooloutline.png'
     }
+    function overStoolov () {
+      stoolov.style.cursor = 'pointer'
+      stoolov.src = 'location8outlines/stoolprice.png'
+    }
+
     function overRectsofaol () {
       rectsofaol.style.cursor = 'pointer'
       rectsofaol.src = 'location8outlines/b_rectsofaoutline.png'
     }
+    function overRectsofaov () {
+      rectsofaov.style.cursor = 'pointer'
+      rectsofaov.src = 'location8outlines/rectsofaprice.png'
+    }
+
     function overStableol () {
       stableol.style.cursor = 'pointer'
       stableol.src = 'location8outlines/b_stableoutline.png'
     }
+    function overStableov () {
+      stableov.style.cursor = 'pointer'
+      stableov.src = 'location8outlines/stableprice.png'
+    }
+
     function overSchairol () {
       schairol.style.cursor = 'pointer'
       schairol.src = 'location8outlines/b_schairoutline.png'
     }
+    function overSchairov () {
+      schairov.style.cursor = 'pointer'
+      schairov.src = 'location8outlines/schairprice.png'
+    }
+
     function overBoothol () {
       boothol.style.cursor = 'pointer'
       boothol.src = 'location8outlines/b_boothoutline.png'
     }
+
     function overHighstoolol () {
       highstoolol.style.cursor = 'pointer'
       highstoolol.src = 'location8outlines/b_highstooloutline.png'
+    }
+    function overHighstoolov () {
+      highstoolov.style.cursor = 'pointer'
+      highstoolov.src = 'location8outlines/highstoolprice.png'
+    }
+
+    function overNext () {
+      next.style.cursor = 'pointer'
+      next.src = 'location7/next.png'
+    }
+    function overBack () {
+      back.style.cursor = 'pointer'
+      back.src = 'location7/back.png'
     }
 
     function out () {
@@ -145,20 +186,26 @@
       const schairolAR = schairol.width / schairol.height
       const bootholAR = boothol.width / boothol.height
       const highstoololAR = highstoolol.width / highstoolol.height
+      const nextAR = next.width / next.height
+      const backAR = back.width / back.height
       const winAR = innerWidth / innerHeight
       bg.style.position = 'absolute'
       stoolol.style.position = 'absolute'
-      stoolol.style.zIndex = 4
+      stoolol.style.zIndex = 3
       rectsofaol.style.position = 'absolute'
       rectsofaol.style.zIndex = 2
       stableol.style.position = 'absolute'
-      stableol.style.zIndex = 6
+      stableol.style.zIndex = 4
       schairol.style.position = 'absolute'
-      schairol.style.zIndex = 10
+      schairol.style.zIndex = 6
       boothol.style.position = 'absolute'
-      boothol.style.zIndex = 8
+      boothol.style.zIndex = 5
       highstoolol.style.position = 'absolute'
-      highstoolol.style.zIndex = 12
+      highstoolol.style.zIndex = 7
+      next.style.position = 'absolute'
+      next.style.zIndex = 15
+      back.style.position = 'absolute'
+      back.style.zIndex = 14
       if (winAR > bgAR) { // when screen is wider than bg ratio
         bg.style.width = innerHeight * bgAR + 'px'
         bg.style.height = innerHeight + 'px'
@@ -174,6 +221,10 @@
         boothol.style.height = bgVSboothlolHeight * innerHeight + 'px'
         highstoolol.style.width = bgVShighstoololWidth * innerHeight * bgAR + 'px'
         highstoolol.style.height = bgVShighstoololHeight * innerHeight + 'px'
+        next.style.width = bgVSnextWidth * innerHeight * bgAR + 'px'
+        next.style.height = bgVSnextHeight * innerHeight + 'px'
+        back.style.width = bgVSbackWidth * innerHeight * bgAR + 'px'
+        back.style.height = bgVSbackHeight * innerHeight + 'px'
         bg.style.top = '0px'
         bg.style.left = (innerWidth / 2) - (bg.width / 2) + 'px'
 
@@ -194,6 +245,11 @@
 
         highstoolol.style.top = '52vh'
         highstoolol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.405) + 'px'
+
+        next.style.top = '79.3vh'
+        next.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.467) + 'px'
+        back.style.top = '88.9vh'
+        back.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.486) + 'px'
       } else { // when screen is tighter than bg ratio
         bg.style.width = innerWidth + 'px'
         bg.style.height = innerWidth / bgAR + 'px'
@@ -209,6 +265,10 @@
         boothol.style.height = bgVSbootholHeight * (innerWidth / bgAR) + 'px'
         highstoolol.style.width = bgVShighstoololWidth * innerWidth + 'px'
         highstoolol.style.height = bgVShighstoololHeight * (innerWidth / bgAR) + 'px'
+        next.style.width = bgVSnextWidth * innerWidth + 'px'
+        next.style.height = bgVSnextHeight * (innerWidth / bgAR) + 'px'
+        back.style.width = bgVSbackWidth * innerWidth + 'px'
+        back.style.height = bgVSbackHeight * (innerWidth / bgAR) + 'px'
         bg.style.top = (innerHeight / 2) - (bg.height / 2) + 'px'
         bg.style.left = '0px'
 
@@ -229,21 +289,46 @@
 
         highstoolol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.52) + 'px'
         highstoolol.style.left = '40.5vw'
+
+        next.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.793) + 'px'
+        next.style.left = '46.7vw'
+        back.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.889) + 'px'
+        back.style.left = '48.6vw'
       }
     }
 
-    function openLink () {
-      const urlstool = 'https://www.allermuir.com/en/products/soft-seating/pebble'
-      const winstool = window.open(urlstool, '_blank')
-      const urlrectsofa = 'http://www.keilhauer.com/products/jumble.html'
-      const winrectsofa = window.open(urlrectsofa, '_blank')
-      const urlstable = 'https://store.hermanmiller.com/dining/dining-tables/eames-rectangular-segmented-table/104.html?lang=en_US'
-      const winstable = window.open(urlstable, '_blank')
-      const urlschair = 'https://store.hermanmiller.com/dining/dining-chairs/eames-molded-plastic-wire-base-side-chair-dsr/1153.html?lang=en_US'
-      const winschair = window.open(urlschair, '_blank')
-      const urlhighstool = 'https://www.escnj.us/cms/lib/NJ02211024/Centricity/Domain/45/harter%20priceguide_march2017.pdf'
-      const winhighstool = window.open(urlstool, '_blank')
+    function openStoolLink () {
+      const url = 'https://www.allermuir.com/en/products/soft-seating/pebble'
+      const win = window.open(url, '_blank')
       win.focus()
+    }
+    function openRectsofaLink () {
+      const url = 'http://www.keilhauer.com/products/jumble.html'
+      const win = window.open(url, '_blank')
+      win.focus()
+    }
+    function openStableLink () {
+      const url = 'https://store.hermanmiller.com/dining/dining-tables/eames-rectangular-segmented-table/104.html?lang=en_US'
+      const win = window.open(url, '_blank')
+      win.focus()
+    }
+    function openSchairLink () {
+      const url = 'https://store.hermanmiller.com/dining/dining-chairs/eames-molded-plastic-wire-base-side-chair-dsr/1153.html?lang=en_US'
+      const win = window.open(url, '_blank')
+      win.focus()
+    }
+    function openHighstoolLink () {
+      const url = 'https://www.escnj.us/cms/lib/NJ02211024/Centricity/Domain/45/harter%20priceguide_march2017.pdf'
+      const win = window.open(url, '_blank')
+      win.focus()
+    }
+    function openNextLink () {
+      const url = 'location9.html'
+      const win = window.open(url, '_self')
+    }
+    function openBackLink () {
+      const url = 'location7.html'
+      const win = window.open(url, '_self')
     }
 
     placeBG()
@@ -252,27 +337,43 @@
     window.addEventListener('resize', placeBG)
     stoolol.addEventListener('mouseover', overStoolol)
     stoolol.addEventListener('mouseout', out)
-    stoolol.addEventListener('click', showOverlay)
-    stoolov.addEventListener('click', openLink)
+    stoolol.addEventListener('click', showStoolovOverlay)
+    stoolov.addEventListener('click', openStoolLink)
+    stoolov.addEventListener('mouseover', overStoolov)
+
     rectsofaol.addEventListener('mouseover', overRectsofaol)
     rectsofaol.addEventListener('mouseout', out)
-    rectsofaol.addEventListener('click', showOverlay)
-    rectsofaov.addEventListener('click', openLink)
+    rectsofaol.addEventListener('click', showRectsofaovOverlay)
+    rectsofaov.addEventListener('click', openRectsofaLink)
+    rectsofaov.addEventListener('mouseover', overRectsofaov)
+
     stableol.addEventListener('mouseover', overStableol)
     stableol.addEventListener('mouseout', out)
-    stableol.addEventListener('click', showOverlay)
-    stableov.addEventListener('click', openLink)
+    stableol.addEventListener('click', showStableovOverlay)
+    stableov.addEventListener('click', openStableLink)
+    stableov.addEventListener('mouseover', overStableov)
+
     schairol.addEventListener('mouseover', overSchairol)
     schairol.addEventListener('mouseout', out)
-    schairol.addEventListener('click', showOverlay)
-    schairov.addEventListener('click', openLink)
+    schairol.addEventListener('click', showSchairovOverlay)
+    schairov.addEventListener('click', openSchairLink)
+    schairov.addEventListener('mouseover', overSchairov)
+
     boothol.addEventListener('mouseover', overBoothol)
     boothol.addEventListener('mouseout', out)
-    boothol.addEventListener('click', showOverlay)
+    boothol.addEventListener('click', showBoothovOverlay)
+
     highstoolol.addEventListener('mouseover', overHighstoolol)
     highstoolol.addEventListener('mouseout', out)
-    highstoolol.addEventListener('click', showOverlay)
-    highstoolov.addEventListener('click', openLink)
+    highstoolol.addEventListener('click', showHighstoolovOverlay)
+    highstoolov.addEventListener('click', openHighstoolLink)
+    highstoolov.addEventListener('mouseover', overHighstoolov)
+
+    next.addEventListener('click', openNextLink)
+    next.addEventListener('mouseover', overNext)
+    back.addEventListener('click', openBackLink)
+    back.addEventListener('mouseover', overBack)
+
     bg.addEventListener('click', hideOverlay)
     </script>
   </body>

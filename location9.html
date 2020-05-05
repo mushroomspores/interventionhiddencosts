@@ -6,13 +6,9 @@
   </head>
 
   <body>
-    <div id="nexttol10">
-      <a href="location10.html">NE</a>
-    </div>
-    <div id="backtol8">
-      <a href="location8.html">Back</a>
-    </div>
 
+    <img src="location9outlines/next.png" id="nexttol10">
+    <img src="location9outlines/back.png" id="backtol8">
     <img src="locations/location9.png" id="bg">
     <img src="location9outlines/lchairoutline.png" id="lchairoutline">
     <img src="location9outlines/lchairprice.png" id="lchairoverlay">
@@ -26,21 +22,28 @@
     const lchairov = document.querySelector('#lchairoverlay')
     const ltableol = document.querySelector('#ltableoutline')
     const ltableov = document.querySelector('#ltableoverlay')
+    const next = document.querySelector('#nexttol10')
+    const back = document.querySelector('#backtol8')
 
     const bgVSlchairolHeight = lchairol.height / bg.height
     const bgVSlchairolWidth = lchairol.width / bg.width
     const bgVSltableolHeight = ltableol.height / bg.height
     const bgVSltableolWidth = ltableol.width / bg.width
+    const bgVSnextHeight = next.height/bg.height
+    const bgVSnextWidth = next.width/bg.width
+    const bgVSbackHeight = back.height/bg.height
+    const bgVSbackWidth = back.width/bg.width
 
-    function showOverlay (e) {
+    function showLchairovOverlay (e) {
       lchairov.style.position = 'absolute'
-      lchairov.style.zIndex = 3
+      lchairov.style.zIndex = 5
       lchairov.style.top = (innerHeight / 2) - (lchairov.height / 2) + 'px'
       lchairov.style.left = (innerWidth / 2) - (lchairov.width / 2) + 'px'
       lchairov.style.display = 'block'
-
+    }
+    function showLtableovOverlay (e) {
       ltableov.style.position = 'absolute'
-      ltableov.style.zIndex = 5
+      ltableov.style.zIndex = 4
       ltableov.style.top = (innerHeight / 2) - (ltableov.height / 2) + 'px'
       ltableov.style.left = (innerWidth / 2) - (ltableov.width / 2) + 'px'
       ltableov.style.display = 'block'
@@ -55,9 +58,27 @@
       lchairol.style.cursor = 'pointer'
       lchairol.src = 'location9outlines/b_lchairoutline.png'
     }
+    function overLchairov () {
+      lchairov.style.cursor = 'pointer'
+      lchairov.src = 'location9outlines/lchairprice.png'
+    }
+
     function overLtableol () {
       ltableol.style.cursor = 'pointer'
       ltableol.src = 'location9outlines/b_ltableoutline.png'
+    }
+    function overLtableov () {
+      ltableov.style.cursor = 'pointer'
+      ltableov.src = 'location9outlines/ltableprice.png'
+    }
+
+    function overNext () {
+      next.style.cursor = 'pointer'
+      next.src = 'location9outlines/next.png'
+    }
+    function overBack () {
+      back.style.cursor = 'pointer'
+      back.src = 'location9outlines/back.png'
     }
 
     function out () {
@@ -69,11 +90,18 @@
       const bgAR = bg.width / bg.height
       const lchairolAR = lchairol.width / lchairol.height
       const ltableolAR = ltableol.width / ltableol.height
+      const nextAR = next.width / next.height
+      const backAR = back.width / back.height
       const winAR = innerWidth / innerHeight
+      bg.style.position = 'absolute'
       lchairol.style.position = 'absolute'
-      lchairol.style.zIndex = 2
+      lchairol.style.zIndex = 3
       ltableol.style.position = 'absolute'
-      ltableol.style.zIndex = 4
+      ltableol.style.zIndex = 2
+      next.style.position = 'absolute'
+      next.style.zIndex = 6
+      back.style.position = 'absolute'
+      back.style.zIndex = 7
       if (winAR > bgAR) { // when screen is wider than bg ratio
         bg.style.width = innerHeight * bgAR + 'px'
         bg.style.height = innerHeight + 'px'
@@ -81,12 +109,20 @@
         lchairol.style.height = bgVSlchairolHeight * innerHeight + 'px'
         ltableol.style.width = bgVSltableolWidth * innerHeight * bgAR + 'px'
         ltableol.style.height = bgVSltableolHeight * innerHeight + 'px'
+        next.style.width = bgVSnextWidth * innerHeight * bgAR + 'px'
+        next.style.height = bgVSnextHeight * innerHeight + 'px'
+        back.style.width = bgVSbackWidth * innerHeight * bgAR + 'px'
+        back.style.height = bgVSbackHeight * innerHeight + 'px'
         bg.style.top = '0px'
         bg.style.left = (innerWidth / 2) - (bg.width / 2) + 'px'
-        lchairol.style.top = '57.3vh'
+        lchairol.style.top = '57.7vh'
         lchairol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.78) + 'px'
-        ltableol.style.top = '57.5vh'
+        ltableol.style.top = '57.9vh'
         ltableol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.802) + 'px'
+        next.style.top = '78.4vh'
+        next.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.465) + 'px'
+        back.style.top = '88vh'
+        back.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.482) + 'px'
       } else { // when screen is tighter than bg ratio
         bg.style.width = innerWidth + 'px'
         bg.style.height = innerWidth / bgAR + 'px'
@@ -94,35 +130,64 @@
         lchairol.style.height = bgVSlchairolHeight * (innerWidth / bgAR) + 'px'
         ltableol.style.width = bgVSltableolWidth * innerWidth + 'px'
         ltableol.style.height = bgVSltableolHeight * (innerWidth / bgAR) + 'px'
+        next.style.width = bgVSnextWidth * innerWidth + 'px'
+        next.style.height = bgVSnextHeight * (innerWidth / bgAR) + 'px'
+        back.style.width = bgVSbackWidth * innerWidth + 'px'
+        back.style.height = bgVSbackHeight * (innerWidth / bgAR) + 'px'
         bg.style.top = (innerHeight / 2) - (bg.height / 2) + 'px'
         bg.style.left = '0px'
-        lchairol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.573) + 'px'
+        lchairol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.577) + 'px'
         lchairol.style.left = '78vw'
-        ltableol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.575) + 'px'
+        ltableol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.579) + 'px'
         ltableol.style.left = '80.2vw'
+        next.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.784) + 'px'
+        next.style.left = '46.5vw'
+        back.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.88) + 'px'
+        back.style.left = '48.2vw'
       }
     }
 
-    function openLink () {
-      const urllchair = 'https://store.hermanmiller.com/dining/dining-chairs/eames-molded-plastic-wire-base-side-chair-dsr/1153.html?lang=en_US'
-      const winlchair = window.open(urllchair, '_blank')
-      const urlltable = 'https://store.hermanmiller.com/dining/dining-tables/eames-rectangular-segmented-table/104.html?lang=en_US'
-      const winltable = window.open(urlltable, '_blank')
+    function openLchairLink () {
+      const url = 'https://store.hermanmiller.com/dining/dining-chairs/eames-molded-plastic-wire-base-side-chair-dsr/1153.html?lang=en_US'
+      const win = window.open(url, '_blank')
+      win.focus ()
+    }
+    function openLtableLink () {
+      const url = 'https://store.hermanmiller.com/dining/dining-tables/eames-rectangular-segmented-table/104.html?lang=en_US'
+      const win = window.open(url, '_blank')
       win.focus()
+    }
+    function openNextLink () {
+      const url = 'location10.html'
+      const win = window.open(url, '_self')
+    }
+    function openBackLink () {
+      const url = 'location8.html'
+      const win = window.open(url, '_self')
     }
 
     placeBG()
     hideOverlay()
 
     window.addEventListener('resize', placeBG)
+
     lchairol.addEventListener('mouseover', overLchairol)
     lchairol.addEventListener('mouseout', out)
-    lchairol.addEventListener('click', showOverlay)
-    lchairov.addEventListener('click', openLink)
+    lchairol.addEventListener('click', showLchairovOverlay)
+    lchairov.addEventListener('click', openLchairLink)
+    lchairov.addEventListener('mouseover', overLchairov)
+
     ltableol.addEventListener('mouseover', overLtableol)
     ltableol.addEventListener('mouseout', out)
-    ltableol.addEventListener('click', showOverlay)
-    ltableov.addEventListener('click', openLink)
+    ltableol.addEventListener('click', showLtableovOverlay)
+    ltableov.addEventListener('click', openLtableLink)
+    ltableov.addEventListener('mouseover', overLtableov)
+
+    next.addEventListener('click', openNextLink)
+    next.addEventListener('mouseover', overNext)
+    back.addEventListener('click', openBackLink)
+    back.addEventListener('mouseover', overBack)
+
     bg.addEventListener('click', hideOverlay)
 
     </script>

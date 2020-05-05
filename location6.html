@@ -6,16 +6,12 @@
   </head>
 
   <body>
-    <div id="nexttol7">
-      <a href="location7.html">Next</a>
-    </div>
-    <div id="backtol5">
-      <a href="location5.html">Back</a>
-    </div>
 
     <img src="locations/location6.png" id="bg">
     <img src="location6outlines/l6modsofaoutline.png" id="l6modsofaoutline" >
     <img src="location3outlines/modsofaprice.png" id="overlay">
+    <img src="location6outlines/next.png" id="nexttol7">
+    <img src="location6outlines/back.png" id="backtol5">
 
     <script>
 
@@ -36,9 +32,15 @@
       const bg = document.querySelector('#bg')
       const l6ol = document.querySelector('#l6modsofaoutline')
       const l6ov = document.querySelector('#overlay')
+      const next = document.querySelector('#nexttol7')
+      const back = document.querySelector('#backtol5')
 
       const bgVSl6olHeight = l6ol.height / bg.height
       const bgVSl6olWidth = l6ol.width / bg.width
+      const bgVSnextHeight = next.height/bg.height
+      const bgVSnextWidth = next.width/bg.width
+      const bgVSbackHeight = back.height/bg.height
+      const bgVSbackWidth = back.width/bg.width
 
       function showOverlay (e) {
         l6ov.style.position = 'absolute'
@@ -54,8 +56,17 @@
 
       function overl6 () {
         l6ol.style.cursor = 'pointer'
-        l6ol.src = 'location6outlines/l6modsofaoutline2.png'
+        l6ol.src = 'location6outlines/b_l6modsofaoutline.png'
       }
+      function overNext () {
+        next.style.cursor = 'pointer'
+        next.src = 'location6outlines/next.png'
+      }
+      function overBack () {
+        back.style.cursor = 'pointer'
+        back.src = 'location6outlines/back.png'
+      }
+
 
       function outl6 () {
         l6ol.src = 'location6outlines/l6modsofaoutline.png'
@@ -63,36 +74,61 @@
 
       function placeBG () {
         const bgAR = bg.width / bg.height
+        const nextAR = next.width / next.height
+        const backAR = back.width / back.height
         const l6olAR = l6ol.width / l6ol.height
         const winAR = innerWidth / innerHeight
         bg.style.position = 'absolute'
         l6ol.style.position = 'absolute'
         l6ol.style.zIndex = 2
+        next.style.position = 'absolute'
+        next.style.zIndex = 4
+        back.style.position = 'absolute'
+        back.style.zIndex = 5
         if (winAR > bgAR) { // when screen is wider than bg ratio
           bg.style.width = innerHeight * bgAR + 'px'
           bg.style.height = innerHeight + 'px'
+          next.style.width = bgVSnextWidth * innerHeight * bgAR + 'px'
+          next.style.height = bgVSnextHeight * innerHeight + 'px'
+          back.style.width = bgVSbackWidth * innerHeight * bgAR + 'px'
+          back.style.height = bgVSbackHeight * innerHeight + 'px'
           l6ol.style.width = bgVSl6olWidth * innerHeight * bgAR + 'px'
           l6ol.style.height = bgVSl6olHeight * innerHeight + 'px'
           bg.style.top = '0px'
           bg.style.left = (innerWidth / 2) - (bg.width / 2) + 'px'
-          l6ol.style.top = '67vh'
-          l6ol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.38) + 'px'
+          l6ol.style.top = '68.3vh'
+          l6ol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.382) + 'px'
+          next.style.top = '79.3vh'
+          next.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.485) + 'px'
+          back.style.top = '88.9vh'
+          back.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.486) + 'px'
         } else { // when screen is tighter than bg ratio
           bg.style.width = innerWidth + 'px'
           bg.style.height = innerWidth / bgAR + 'px'
+          next.style.width = bgVSnextWidth * innerWidth + 'px'
+          next.style.height = bgVSnextHeight * (innerWidth / bgAR) + 'px'
+          back.style.width = bgVSbackWidth * innerWidth + 'px'
+          back.style.height = bgVSbackHeight * (innerWidth / bgAR) + 'px'
           l6ol.style.width = bgVSl6olWidth * innerWidth + 'px'
           l6ol.style.height = bgVSl6olHeight * (innerWidth / bgAR) + 'px'
           bg.style.top = (innerHeight / 2) - (bg.height / 2) + 'px'
           bg.style.left = '0px'
-          l6ol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.67) + 'px'
-          l6ol.style.left = '38vw'
+          l6ol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.683) + 'px'
+          l6ol.style.left = '38.2vw'
+          next.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.793) + 'px'
+          next.style.left = '48.5vw'
+          back.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.889) + 'px'
+          back.style.left = '48.6vw'
         }
       }
 
-      function openLink () {
-        const url = 'http://saic.edu'
-        const win = window.open(url, '_blank')
-        win.focus()
+      function openNextLink () {
+        const url = 'location7.html'
+        const win = window.open(url, '_self')
+      }
+      function openBackLink () {
+        const url = 'location5.html'
+        const win = window.open(url, '_self')
       }
 
       placeBG()
@@ -102,8 +138,11 @@
       l6ol.addEventListener('mouseover', overl6)
       l6ol.addEventListener('mouseout', outl6)
       l6ol.addEventListener('click', showOverlay)
-      l6ov.addEventListener('click', openLink)
       bg.addEventListener('click', hideOverlay)
+      next.addEventListener('click', openNextLink)
+      next.addEventListener('mouseover', overNext)
+      back.addEventListener('click', openBackLink)
+      back.addEventListener('mouseover', overBack)
 
     </script>
   </body>
