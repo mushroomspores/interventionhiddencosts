@@ -331,10 +331,11 @@
       const win = window.open(url, '_self')
     }
 
-    placeBG()
     hideOverlay()
 
     window.addEventListener('resize', placeBG)
+    window.addEventListener('load', placeBG)
+
     stoolol.addEventListener('mouseover', overStoolol)
     stoolol.addEventListener('mouseout', out)
     stoolol.addEventListener('click', showStoolovOverlay)

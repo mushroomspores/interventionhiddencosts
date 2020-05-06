@@ -78,9 +78,9 @@
       const win = window.open(url, '_self')
     }
 
-    placeBG()
 
     window.addEventListener('resize', placeBG)
+    window.addEventListener('load', placeBG)
 
     next.addEventListener('click', openNextLink)
     next.addEventListener('mouseover', overNext)

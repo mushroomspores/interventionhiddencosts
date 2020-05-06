@@ -208,10 +208,11 @@
       const win = window.open(url, '_self')
     }
 
-    placeBG()
     hideOverlay()
 
     window.addEventListener('resize', placeBG)
+    window.addEventListener('load', placeBG)
+
 
     chairol.addEventListener('mouseover', overChairol)
     chairol.addEventListener('mouseout', out)
