@@ -15,6 +15,11 @@
       const bgVStextHeight = text.height / bg.height
       const bgVStextWidth = text.width / bg.width
 
+      function overText () {
+      text.style.cursor = 'pointer'
+      text.src = 'titlepage/entervirtualtour.png'
+      }
+
       function placeBG () {
         const bgAR = bg.width / bg.height
         const textAR = text.width / text.height
@@ -46,6 +51,7 @@
       placeBG()
 
       window.addEventListener('resize', placeBG)
+      text.addEventListener('mouseover', overText)
 
     </script>
 
