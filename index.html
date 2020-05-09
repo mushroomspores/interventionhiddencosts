@@ -53,8 +53,9 @@
         const win = window.open(url, '_self')
       }
 
+      placeBG ()
+
       window.addEventListener('resize', placeBG)
-      window.addEventListener('load', placeBG)
 
       text.addEventListener('mouseover', overText)
       text.addEventListener('click', openTextLink)
