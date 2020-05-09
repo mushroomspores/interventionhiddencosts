@@ -6,7 +6,7 @@
 
   <body>
     <img src="titlepage/titlepagebg.png" id="bg">
-    <a href="location1.html"><img src="titlepage/entervirtualtour.png" id="text"></a>
+    <img src="titlepage/entervirtualtour.png" id="text">
 
     <script>
       const bg = document.querySelector('#bg')
@@ -48,10 +48,16 @@
         }
       }
 
+      function openTextLink () {
+        const url = 'location1.html'
+        const win = window.open(url, '_self')
+      }
+
       window.addEventListener('resize', placeBG)
       window.addEventListener('load', placeBG)
-      
+
       text.addEventListener('mouseover', overText)
+      text.addEventListener('click', openTextLink)
 
     </script>
 
