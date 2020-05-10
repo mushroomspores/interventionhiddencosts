@@ -218,7 +218,7 @@
         schairol.style.width = bgVSschairolWidth * innerHeight * bgAR + 'px'
         schairol.style.height = bgVSschairolHeight * innerHeight + 'px'
         boothol.style.width = bgVSbootholWidth * innerHeight * bgAR + 'px'
-        boothol.style.height = bgVSboothlolHeight * innerHeight + 'px'
+        boothol.style.height = bgVSbootholHeight * innerHeight + 'px'
         highstoolol.style.width = bgVShighstoololWidth * innerHeight * bgAR + 'px'
         highstoolol.style.height = bgVShighstoololHeight * innerHeight + 'px'
         next.style.width = bgVSnextWidth * innerHeight * bgAR + 'px'
@@ -227,29 +227,40 @@
         back.style.height = bgVSbackHeight * innerHeight + 'px'
         bg.style.top = '0px'
         bg.style.left = (innerWidth / 2) - (bg.width / 2) + 'px'
+        console.log(`${bg.style.top}`)
+        console.log(`bg: ${bg.style.top}, ${bg.style.left}`)
 
         stoolol.style.top = '68.3vh'
         stoolol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.227) + 'px'
+        console.log(`stool: ${stoolol.style.top}, ${stoolol.style.left}`)
 
         rectsofaol.style.top = '59.6vh'
         rectsofaol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.245) + 'px'
+        console.log(`rect sofa: ${rectsofaol.style.top}, ${rectsofaol.style.left}`)
 
         stableol.style.top = '58vh'
         stableol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.09) + 'px'
+        console.log(`stable: ${stableol.style.top}, ${stableol.style.left}`)
 
         schairol.style.top = '55.2vh'
         schairol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.218) + 'px'
+        console.log(`schair: ${schairol.style.top}, ${schairol.style.left}`)
 
         boothol.style.top = '51vh'
         boothol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.22) + 'px'
+        console.log(`booth: ${boothol.style.top}, ${boothol.style.left}`)
 
         highstoolol.style.top = '52vh'
         highstoolol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.405) + 'px'
+        console.log(`high stool: ${highstoolol.style.top}, ${highstoolol.style.left}`)
 
         next.style.top = '79.3vh'
         next.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.467) + 'px'
+        console.log(`next: ${next.style.top}, ${next.style.left}`)
+
         back.style.top = '88.9vh'
         back.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.486) + 'px'
+        console.log(`back: ${back.style.top}, ${back.style.left}`)
       } else { // when screen is tighter than bg ratio
         bg.style.width = innerWidth + 'px'
         bg.style.height = innerWidth / bgAR + 'px'
