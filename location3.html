@@ -1,6 +1,10 @@
+<!DOCTYPE html>
 <html>
 
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="stylez.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
   </head>
@@ -17,224 +21,227 @@
     <img src="location3outlines/next.png" id="nexttol4">
     <img src="location3outlines/back.png" id="backtol2">
 
-
     <script>
-    const bg = document.querySelector('#bg')
-    const chairol = document.querySelector('#chairoutline')
-    const chairov = document.querySelector('#chairoverlay')
-    const modsofaol = document.querySelector('#modsofaoutline')
-    const modsofaov = document.querySelector('#modsofaoverlay')
-    const sofaol = document.querySelector('#sofaoutline')
-    const sofaov = document.querySelector('#sofaoverlay')
-    const next = document.querySelector('#nexttol4')
-    const back = document.querySelector('#backtol2')
+      const bg = document.querySelector('#bg')
+      const chairol = document.querySelector('#chairoutline')
+      const chairov = document.querySelector('#chairoverlay')
+      const modsofaol = document.querySelector('#modsofaoutline')
+      const modsofaov = document.querySelector('#modsofaoverlay')
+      const sofaol = document.querySelector('#sofaoutline')
+      const sofaov = document.querySelector('#sofaoverlay')
+      const next = document.querySelector('#nexttol4')
+      const back = document.querySelector('#backtol2')
 
-    const bgVSchairolHeight = chairol.height / bg.height
-    const bgVSchairolWidth = chairol.width / bg.width
-    const bgVSmodsofaolHeight = modsofaol.height / bg.height
-    const bgVSmodsofaolWidth = modsofaol.width / bg.width
-    const bgVSsofaolHeight = sofaol.height / bg.height
-    const bgVSsofaolWidth = sofaol.width / bg.width
-    const bgVSnextHeight = next.height/bg.height
-    const bgVSnextWidth = next.width/bg.width
-    const bgVSbackHeight = back.height/bg.height
-    const bgVSbackWidth = back.width/bg.width
+      const bgVSchairolHeight = chairol.height / bg.height
+      const bgVSchairolWidth = chairol.width / bg.width
+      const bgVSmodsofaolHeight = modsofaol.height / bg.height
+      const bgVSmodsofaolWidth = modsofaol.width / bg.width
+      const bgVSsofaolHeight = sofaol.height / bg.height
+      const bgVSsofaolWidth = sofaol.width / bg.width
+      const bgVSnextHeight = next.height/bg.height
+      const bgVSnextWidth = next.width/bg.width
+      const bgVSbackHeight = back.height/bg.height
+      const bgVSbackWidth = back.width/bg.width
 
-    function showChairovOverlay (e) {
-      chairov.style.position = 'absolute'
-      chairov.style.zIndex = 5
-      chairov.style.top = (innerHeight / 2) - (chairov.height / 2) + 'px'
-      chairov.style.left = (innerWidth / 2) - (chairov.width / 2) + 'px'
-      chairov.style.display = 'block'
+      console.log("reached")
 
-    }
-
-    function showModsofaovOverlay (e) {
-      modsofaov.style.position = 'absolute'
-      modsofaov.style.zIndex = 6
-      modsofaov.style.top = (innerHeight / 2) - (modsofaov.height / 2) + 'px'
-      modsofaov.style.left = (innerWidth / 2) - (modsofaov.width / 2) + 'px'
-      modsofaov.style.display = 'block'
-    }
-
-    function showSofaovOverlay (e) {
-      sofaov.style.position = 'absolute'
-      sofaov.style.zIndex = 7
-      sofaov.style.top = (innerHeight / 2) - (sofaov.height / 2) + 'px'
-      sofaov.style.left = (innerWidth / 2) - (sofaov.width / 2) + 'px'
-      sofaov.style.display = 'block'
-    }
-
-    function hideOverlay () {
-      chairov.style.display = 'none'
-      modsofaov.style.display = 'none'
-      sofaov.style.display = 'none'
-    }
-
-    function overChairol () {
-      chairol.style.cursor = 'pointer'
-      chairol.src = 'location3outlines/b_chairoutline.png'
-    }
-    function overChairov () {
-      chairov.style.cursor = 'pointer'
-      chairov.src = 'location3outlines/chairprice.png'
-    }
-
-    function overModsofaol () {
-      modsofaol.style.cursor = 'pointer'
-      modsofaol.src = 'location3outlines/b_modsofaoutline.png'
-    }
-
-    function overSofaol () {
-      sofaol.style.cursor = 'pointer'
-      sofaol.src = 'location3outlines/b_sofaoutline.png'
-    }
-    function overSofaov () {
-      sofaov.style.cursor = 'pointer'
-      sofaov.src = 'location3outlines/sofaprice.png'
-    }
-
-    function overNext () {
-      next.style.cursor = 'pointer'
-      next.src = 'location3outlines/next.png'
-    }
-    function overBack () {
-      back.style.cursor = 'pointer'
-      back.src = 'location3outlines/back.png'
-    }
-
-    function out () {
-      chairol.src = 'location3outlines/chairoutline.png'
-      modsofaol.src = 'location3outlines/modsofaoutline.png'
-      sofaol.src = 'location3outlines/sofaoutline.png'
-    }
-
-    function placeBG () {
-      const bgAR = bg.width / bg.height
-      const chairolAR = chairol.width / chairol.height
-      const modsofaolAR = modsofaol.width / modsofaol.height
-      const sofaolAR = sofaol.width / sofaol.height
-      const winAR = innerWidth / innerHeight
-      bg.style.position = 'absolute'
-      chairol.style.position = 'absolute'
-      modsofaol.style.position = 'absolute'
-      sofaol.style.position = 'absolute'
-      chairol.style.zIndex = 2
-      modsofaol.style.zIndex = 3
-      sofaol.style.zIndex = 4
-      next.style.position = 'absolute'
-      next.style.zIndex = 8
-      back.style.position = 'absolute'
-      back.style.zIndex = 9
-      if (winAR > bgAR) { // when screen is wider than bg ratio
-        bg.style.width = innerHeight * bgAR + 'px'
-        bg.style.height = innerHeight + 'px'
-        next.style.width = bgVSnextWidth * innerHeight * bgAR + 'px'
-        next.style.height = bgVSnextHeight * innerHeight + 'px'
-        back.style.width = bgVSbackWidth * innerHeight * bgAR + 'px'
-        back.style.height = bgVSbackHeight * innerHeight + 'px'
-        chairol.style.width = bgVSchairolWidth * innerHeight * bgAR + 'px'
-        chairol.style.height = bgVSchairolHeight * innerHeight + 'px'
-        modsofaol.style.width = bgVSmodsofaolWidth * innerHeight * bgAR + 'px'
-        modsofaol.style.height = bgVSmodsofaolHeight * innerHeight + 'px'
-        sofaol.style.width = bgVSsofaolWidth * innerHeight * bgAR + 'px'
-        sofaol.style.height = bgVSsofaolHeight * innerHeight + 'px'
-        bg.style.top = '0px'
-        bg.style.left = (innerWidth / 2) - (bg.width / 2) + 'px'
-
-        chairol.style.top = '56.5vh'
-        chairol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.865) + 'px'
-
-        modsofaol.style.top = '73.5vh'
-        modsofaol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.646) + 'px'
-
-        sofaol.style.top = '51.5vh'
-        sofaol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.287) + 'px'
-
-        next.style.top = '78.5vh'
-        next.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.485) + 'px'
-        back.style.top = '88.4vh'
-        back.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.482) + 'px'
-      } else { // when screen is tighter than bg ratio
-        bg.style.width = innerWidth + 'px'
-        bg.style.height = innerWidth / bgAR + 'px'
-        next.style.width = bgVSnextWidth * innerWidth + 'px'
-        next.style.height = bgVSnextHeight * (innerWidth / bgAR) + 'px'
-        back.style.width = bgVSbackWidth * innerWidth + 'px'
-        back.style.height = bgVSbackHeight * (innerWidth / bgAR) + 'px'
-        chairol.style.width = bgVSchairolWidth * innerWidth + 'px'
-        chairol.style.height = bgVSchairolHeight * (innerWidth / bgAR) + 'px'
-        modsofaol.style.width = bgVSmodsofaolWidth * innerWidth + 'px'
-        modsofaol.style.height = bgVSmodsofaolHeight * (innerWidth / bgAR) + 'px'
-        sofaol.style.width = bgVSsofaolWidth * innerWidth + 'px'
-        sofaol.style.height = bgVSsofaolHeight * (innerWidth / bgAR) + 'px'
-        bg.style.top = (innerHeight / 2) - (bg.height / 2) + 'px'
-        bg.style.left = '0px'
-
-        chairol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.565) + 'px'
-        chairol.style.left = '86.5vw'
-
-        modsofaol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.735) + 'px'
-        modsofaol.style.left = '64.6vw'
-
-        sofaol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.515) + 'px'
-        sofaol.style.left = '28.7vw'
-
-        next.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.785) + 'px'
-        next.style.left = '48.5vw'
-        back.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.884) + 'px'
-        back.style.left = '48.2vw'
+      function showChairovOverlay (e) {
+          chairov.style.position = 'absolute'
+          chairov.style.zIndex = 5
+          chairov.style.top = (innerHeight / 2) - (chairov.height / 2) + 'px'
+          chairov.style.left = (innerWidth / 2) - (chairov.width / 2) + 'px'
+          chairov.style.display = 'block'
       }
-    }
 
-    function openChairLink () {
-      const url = 'https://store.hermanmiller.com/dining/dining-chairs/eames-molded-plastic-stacking-side-chair-dss/5678.html?lang=en_US#lang=en_US&start=1'
-      const win = window.open(url, '_blank')
-      win.focus()
-    }
+      function showModsofaovOverlay (e) {
+          modsofaov.style.position = 'absolute'
+          modsofaov.style.zIndex = 6
+          modsofaov.style.top = (innerHeight / 2) - (modsofaov.height / 2) + 'px'
+          modsofaov.style.left = (innerWidth / 2) - (modsofaov.width / 2) + 'px'
+          modsofaov.style.display = 'block'
+      }
 
-    function openSofaLink () {
-      const url = 'https://www.allermuir.com/us/products/sofas/haven'
-      const win = window.open(url, '_blank')
-      win.focus()
-    }
+      function showSofaovOverlay (e) {
+          sofaov.style.position = 'absolute'
+          sofaov.style.zIndex = 7
+          sofaov.style.top = (innerHeight / 2) - (sofaov.height / 2) + 'px'
+          sofaov.style.left = (innerWidth / 2) - (sofaov.width / 2) + 'px'
+          sofaov.style.display = 'block'
+      }
 
-    function openNextLink () {
-      const url = 'location4.html'
-      const win = window.open(url, '_self')
-    }
-    function openBackLink () {
-      const url = 'location2.html'
-      const win = window.open(url, '_self')
-    }
+      function hideOverlay () {
+          chairov.style.display = 'none'
+          modsofaov.style.display = 'none'
+          sofaov.style.display = 'none'
+      }
 
-    hideOverlay()
+      function overChairol () {
+          chairol.style.cursor = 'pointer'
+          chairol.src = 'location3outlines/b_chairoutline.png'
+      }
+      function overChairov () {
+          chairov.style.cursor = 'pointer'
+          chairov.src = 'location3outlines/chairprice.png'
+      }
 
-    window.addEventListener('load', placeBG)
-    window.addEventListener('resize', placeBG)
+      function overModsofaol () {
+          modsofaol.style.cursor = 'pointer'
+          modsofaol.src = 'location3outlines/b_modsofaoutline.png'
+      }
 
-    chairol.addEventListener('mouseover', overChairol)
-    chairol.addEventListener('mouseout', out)
-    chairol.addEventListener('click', showChairovOverlay)
-    chairov.addEventListener('click', openChairLink)
-    chairov.addEventListener('mouseover', overChairov)
+      function overSofaol () {
+          sofaol.style.cursor = 'pointer'
+          sofaol.src = 'location3outlines/b_sofaoutline.png'
+      }
+      function overSofaov () {
+          sofaov.style.cursor = 'pointer'
+          sofaov.src = 'location3outlines/sofaprice.png'
+      }
 
-    modsofaol.addEventListener('mouseover', overModsofaol)
-    modsofaol.addEventListener('mouseout', out)
-    modsofaol.addEventListener('click', showModsofaovOverlay)
+      function overNext () {
+          next.style.cursor = 'pointer'
+          next.src = 'location3outlines/next.png'
+      }
+      function overBack () {
+          back.style.cursor = 'pointer'
+          back.src = 'location3outlines/back.png'
+      }
 
-    sofaol.addEventListener('mouseover', overSofaol)
-    sofaol.addEventListener('mouseout', out)
-    sofaol.addEventListener('click', showSofaovOverlay)
-    sofaov.addEventListener('click', openSofaLink)
-    sofaov.addEventListener('mouseover', overSofaov)
+      function out () {
+          chairol.src = 'location3outlines/chairoutline.png'
+          modsofaol.src = 'location3outlines/modsofaoutline.png'
+          sofaol.src = 'location3outlines/sofaoutline.png'
+      }
 
-    next.addEventListener('click', openNextLink)
-    next.addEventListener('mouseover', overNext)
-    back.addEventListener('click', openBackLink)
-    back.addEventListener('mouseover', overBack)
+      function placeBG () {
+          const bgAR = bg.width / bg.height
+          const chairolAR = chairol.width / chairol.height
+          const modsofaolAR = modsofaol.width / modsofaol.height
+          const sofaolAR = sofaol.width / sofaol.height
+          const winAR = innerWidth / innerHeight
+          bg.style.position = 'absolute'
+          chairol.style.position = 'absolute'
+          modsofaol.style.position = 'absolute'
+          sofaol.style.position = 'absolute'
+          chairol.style.zIndex = 2
+          modsofaol.style.zIndex = 3
+          sofaol.style.zIndex = 4
+          next.style.position = 'absolute'
+          next.style.zIndex = 8
+          back.style.position = 'absolute'
+          back.style.zIndex = 9
+          console.log(`${winAR}, ${bgAR}`)
+          if (winAR > bgAR) { // when screen is wider than bg ratio
+              console.log("screen is wider than bg")
+          bg.style.width = innerHeight * bgAR + 'px'
+          bg.style.height = innerHeight + 'px'
+          next.style.width = bgVSnextWidth * innerHeight * bgAR + 'px'
+          next.style.height = bgVSnextHeight * innerHeight + 'px'
+          back.style.width = bgVSbackWidth * innerHeight * bgAR + 'px'
+          back.style.height = bgVSbackHeight * innerHeight + 'px'
+          chairol.style.width = bgVSchairolWidth * innerHeight * bgAR + 'px'
+          chairol.style.height = bgVSchairolHeight * innerHeight + 'px'
+          modsofaol.style.width = bgVSmodsofaolWidth * innerHeight * bgAR + 'px'
+          modsofaol.style.height = bgVSmodsofaolHeight * innerHeight + 'px'
+          sofaol.style.width = bgVSsofaolWidth * innerHeight * bgAR + 'px'
+          sofaol.style.height = bgVSsofaolHeight * innerHeight + 'px'
+          bg.style.top = '0px'
+          bg.style.left = (innerWidth / 2) - (bg.width / 2) + 'px'
 
-    bg.addEventListener('click', hideOverlay)
+          chairol.style.top = '56.5vh'
+          chairol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.865) + 'px'
+
+          modsofaol.style.top = '73.5vh'
+          modsofaol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.646) + 'px'
+
+          sofaol.style.top = '51.5vh'
+          sofaol.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.287) + 'px'
+
+          next.style.top = '78.5vh'
+          next.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.485) + 'px'
+          back.style.top = '88.4vh'
+          back.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.482) + 'px'
+          } else { // when screen is tighter than bg ratio
+              console.log("bg is wider than screen")
+          bg.style.width = innerWidth + 'px'
+          bg.style.height = innerWidth / bgAR + 'px'
+          next.style.width = bgVSnextWidth * innerWidth + 'px'
+          next.style.height = bgVSnextHeight * (innerWidth / bgAR) + 'px'
+          back.style.width = bgVSbackWidth * innerWidth + 'px'
+          back.style.height = bgVSbackHeight * (innerWidth / bgAR) + 'px'
+          chairol.style.width = bgVSchairolWidth * innerWidth + 'px'
+          chairol.style.height = bgVSchairolHeight * (innerWidth / bgAR) + 'px'
+          modsofaol.style.width = bgVSmodsofaolWidth * innerWidth + 'px'
+          modsofaol.style.height = bgVSmodsofaolHeight * (innerWidth / bgAR) + 'px'
+          sofaol.style.width = bgVSsofaolWidth * innerWidth + 'px'
+          sofaol.style.height = bgVSsofaolHeight * (innerWidth / bgAR) + 'px'
+          bg.style.top = (innerHeight / 2) - (bg.height / 2) + 'px'
+          bg.style.left = '0px'
+
+          chairol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.565) + 'px'
+          chairol.style.left = '86.5vw'
+
+          modsofaol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.735) + 'px'
+          modsofaol.style.left = '64.6vw'
+
+          sofaol.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.515) + 'px'
+          sofaol.style.left = '28.7vw'
+
+          next.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.785) + 'px'
+          next.style.left = '48.5vw'
+          back.style.top = (innerHeight / 2) - (bg.height / 2) + (bg.height * 0.884) + 'px'
+          back.style.left = '48.2vw'
+          }
+      }
+
+      function openChairLink () {
+          const url = 'https://store.hermanmiller.com/dining/dining-chairs/eames-molded-plastic-stacking-side-chair-dss/5678.html?lang=en_US#lang=en_US&start=1'
+          const win = window.open(url, '_blank')
+          win.focus()
+      }
+
+      function openSofaLink () {
+          const url = 'https://www.allermuir.com/us/products/sofas/haven'
+          const win = window.open(url, '_blank')
+          win.focus()
+      }
+
+      function openNextLink () {
+          const url = 'location4.html'
+          const win = window.open(url, '_self')
+      }
+      function openBackLink () {
+          const url = 'location2.html'
+          const win = window.open(url, '_self')
+      }
+
+      hideOverlay()
+
+      window.addEventListener('load', placeBG)
+      window.addEventListener('resize', placeBG)
+
+      chairol.addEventListener('mouseover', overChairol)
+      chairol.addEventListener('mouseout', out)
+      chairol.addEventListener('click', showChairovOverlay)
+      chairov.addEventListener('click', openChairLink)
+      chairov.addEventListener('mouseover', overChairov)
+
+      modsofaol.addEventListener('mouseover', overModsofaol)
+      modsofaol.addEventListener('mouseout', out)
+      modsofaol.addEventListener('click', showModsofaovOverlay)
+
+      sofaol.addEventListener('mouseover', overSofaol)
+      sofaol.addEventListener('mouseout', out)
+      sofaol.addEventListener('click', showSofaovOverlay)
+      sofaov.addEventListener('click', openSofaLink)
+      sofaov.addEventListener('mouseover', overSofaov)
+
+      next.addEventListener('click', openNextLink)
+      next.addEventListener('mouseover', overNext)
+      back.addEventListener('click', openBackLink)
+      back.addEventListener('mouseover', overBack)
+
+      bg.addEventListener('click', hideOverlay)
     </script>
 
   </body>
