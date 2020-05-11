@@ -32,16 +32,21 @@
       const next = document.querySelector('#nexttol4')
       const back = document.querySelector('#backtol2')
 
-      const bgVSchairolHeight = chairol.height / bg.height
-      const bgVSchairolWidth = chairol.width / bg.width
-      const bgVSmodsofaolHeight = modsofaol.height / bg.height
-      const bgVSmodsofaolWidth = modsofaol.width / bg.width
-      const bgVSsofaolHeight = sofaol.height / bg.height
-      const bgVSsofaolWidth = sofaol.width / bg.width
-      const bgVSnextHeight = next.height/bg.height
-      const bgVSnextWidth = next.width/bg.width
-      const bgVSbackHeight = back.height/bg.height
-      const bgVSbackWidth = back.width/bg.width
+      //
+      //  these variables reference the width/heights of the images
+      //  but in some cases they might be created before the images exist
+      //  so the width/height will be 0 or NaN (not a number)
+      //
+      // const bgVSchairolHeight = chairol.height / bg.height
+      // const bgVSchairolWidth = chairol.width / bg.width
+      // const bgVSmodsofaolHeight = modsofaol.height / bg.height
+      // const bgVSmodsofaolWidth = modsofaol.width / bg.width
+      // const bgVSsofaolHeight = sofaol.height / bg.height
+      // const bgVSsofaolWidth = sofaol.width / bg.width
+      // const bgVSnextHeight = next.height/bg.height
+      // const bgVSnextWidth = next.width/bg.width
+      // const bgVSbackHeight = back.height/bg.height
+      // const bgVSbackWidth = back.width/bg.width
 
       console.log("reached")
 
@@ -114,6 +119,22 @@
       }
 
       function placeBG () {
+        //
+        //  so i've moved these down here instead, so they don't get created
+        //  until after the 'load' event fires, which guarantees the images
+        //  have all already been loaded
+        //
+          const bgVSchairolHeight = chairol.height / bg.height
+          const bgVSchairolWidth = chairol.width / bg.width
+          const bgVSmodsofaolHeight = modsofaol.height / bg.height
+          const bgVSmodsofaolWidth = modsofaol.width / bg.width
+          const bgVSsofaolHeight = sofaol.height / bg.height
+          const bgVSsofaolWidth = sofaol.width / bg.width
+          const bgVSnextHeight = next.height/bg.height
+          const bgVSnextWidth = next.width/bg.width
+          const bgVSbackHeight = back.height/bg.height
+          const bgVSbackWidth = back.width/bg.width
+
           const bgAR = bg.width / bg.height
           const chairolAR = chairol.width / chairol.height
           const modsofaolAR = modsofaol.width / modsofaol.height
