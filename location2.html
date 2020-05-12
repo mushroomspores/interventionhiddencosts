@@ -19,11 +19,6 @@
     const next = document.querySelector('#nexttol3')
     const back = document.querySelector('#backtol1')
 
-    const bgVSnextHeight = next.height/bg.height
-    const bgVSnextWidth = next.width/bg.width
-    const bgVSbackHeight = back.height/bg.height
-    const bgVSbackWidth = back.width/bg.width
-
     function overNext () {
       next.style.cursor = 'pointer'
       next.src = 'location2/next.png'
@@ -38,6 +33,12 @@
       const nextAR = next.width / next.height
       const backAR = back.width / back.height
       const winAR = innerWidth / innerHeight
+
+      const bgVSnextHeight = next.height/bg.height
+      const bgVSnextWidth = next.width/bg.width
+      const bgVSbackHeight = back.height/bg.height
+      const bgVSbackWidth = back.width/bg.width
+
       bg.style.position = 'absolute'
       next.style.position = 'absolute'
       next.style.zIndex = 3
