@@ -29,14 +29,7 @@
     const next = document.querySelector('#nexttol10')
     const back = document.querySelector('#backtol8')
 
-    const bgVSlchairolHeight = lchairol.height / bg.height
-    const bgVSlchairolWidth = lchairol.width / bg.width
-    const bgVSltableolHeight = ltableol.height / bg.height
-    const bgVSltableolWidth = ltableol.width / bg.width
-    const bgVSnextHeight = next.height/bg.height
-    const bgVSnextWidth = next.width/bg.width
-    const bgVSbackHeight = back.height/bg.height
-    const bgVSbackWidth = back.width/bg.width
+    console.log("reached")
 
     function showLchairovOverlay (e) {
       lchairov.style.position = 'absolute'
@@ -91,6 +84,15 @@
     }
 
     function placeBG () {
+      const bgVSlchairolHeight = lchairol.height / bg.height
+      const bgVSlchairolWidth = lchairol.width / bg.width
+      const bgVSltableolHeight = ltableol.height / bg.height
+      const bgVSltableolWidth = ltableol.width / bg.width
+      const bgVSnextHeight = next.height/bg.height
+      const bgVSnextWidth = next.width/bg.width
+      const bgVSbackHeight = back.height/bg.height
+      const bgVSbackWidth = back.width/bg.width
+
       const bgAR = bg.width / bg.height
       const lchairolAR = lchairol.width / lchairol.height
       const ltableolAR = ltableol.width / ltableol.height
@@ -106,7 +108,9 @@
       next.style.zIndex = 6
       back.style.position = 'absolute'
       back.style.zIndex = 7
+      console.log(`${winAR}, ${bgAR}`)
       if (winAR > bgAR) { // when screen is wider than bg ratio
+          console.log("screen is wider than bg")
         bg.style.width = innerHeight * bgAR + 'px'
         bg.style.height = innerHeight + 'px'
         lchairol.style.width = bgVSlchairolWidth * innerHeight * bgAR + 'px'
@@ -128,6 +132,7 @@
         back.style.top = '88vh'
         back.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.482) + 'px'
       } else { // when screen is tighter than bg ratio
+          console.log("bg is wider than screen")
         bg.style.width = innerWidth + 'px'
         bg.style.height = innerWidth / bgAR + 'px'
         lchairol.style.width = bgVSlchairolWidth * innerWidth + 'px'

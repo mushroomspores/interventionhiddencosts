@@ -19,10 +19,7 @@
     const next = document.querySelector('#nexttol5')
     const back = document.querySelector('#backtol3')
 
-    const bgVSnextHeight = next.height/bg.height
-    const bgVSnextWidth = next.width/bg.width
-    const bgVSbackHeight = back.height/bg.height
-    const bgVSbackWidth = back.width/bg.width
+    console.log("reached")
 
     function overNext () {
       next.style.cursor = 'pointer'
@@ -34,6 +31,11 @@
     }
 
     function placeBG () {
+      const bgVSnextHeight = next.height/bg.height
+      const bgVSnextWidth = next.width/bg.width
+      const bgVSbackHeight = back.height/bg.height
+      const bgVSbackWidth = back.width/bg.width
+
       const bgAR = bg.width / bg.height
       const nextAR = next.width / next.height
       const backAR = back.width / back.height
@@ -43,7 +45,9 @@
       next.style.zIndex = 3
       back.style.position = 'absolute'
       back.style.zIndex = 2
+      console.log(`${winAR}, ${bgAR}`)
       if (winAR > bgAR) { // when screen is wider than bg ratio
+          console.log("screen is wider than bg")
         bg.style.width = innerHeight * bgAR + 'px'
         bg.style.height = innerHeight + 'px'
         next.style.width = bgVSnextWidth * innerHeight * bgAR + 'px'
@@ -57,6 +61,7 @@
         back.style.top = '88.4vh'
         back.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.482) + 'px'
       } else { // when screen is tighter than bg ratio
+          console.log("bg is wider than screen")
         bg.style.width = innerWidth + 'px'
         bg.style.height = innerWidth / bgAR + 'px'
         next.style.width = bgVSnextWidth * innerWidth + 'px'

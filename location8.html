@@ -45,22 +45,7 @@
     const next = document.querySelector('#nexttol9')
     const back = document.querySelector('#backtol7')
 
-    const bgVSstoololHeight = stoolol.height / bg.height
-    const bgVSstoololWidth = stoolol.width / bg.width
-    const bgVSrectsofaolHeight = rectsofaol.height / bg.height
-    const bgVSrectsofaolWidth = rectsofaol.width / bg.width
-    const bgVSstableolHeight = stableol.height / bg.height
-    const bgVSstableolWidth = stableol.width / bg.width
-    const bgVSschairolHeight = schairol.height / bg.height
-    const bgVSschairolWidth = schairol.width / bg.width
-    const bgVSbootholHeight = boothol.height / bg.height
-    const bgVSbootholWidth = boothol.width / bg.width
-    const bgVShighstoololHeight = highstoolol.height / bg.height
-    const bgVShighstoololWidth = highstoolol.width / bg.width
-    const bgVSnextHeight = next.height/bg.height
-    const bgVSnextWidth = next.width/bg.width
-    const bgVSbackHeight = back.height/bg.height
-    const bgVSbackWidth = back.width/bg.width
+    console.log("reached")
 
     function showStoolovOverlay (e) {
       stoolov.style.position = 'absolute'
@@ -183,6 +168,23 @@
     }
 
     function placeBG () {
+      const bgVSstoololHeight = stoolol.height / bg.height
+      const bgVSstoololWidth = stoolol.width / bg.width
+      const bgVSrectsofaolHeight = rectsofaol.height / bg.height
+      const bgVSrectsofaolWidth = rectsofaol.width / bg.width
+      const bgVSstableolHeight = stableol.height / bg.height
+      const bgVSstableolWidth = stableol.width / bg.width
+      const bgVSschairolHeight = schairol.height / bg.height
+      const bgVSschairolWidth = schairol.width / bg.width
+      const bgVSbootholHeight = boothol.height / bg.height
+      const bgVSbootholWidth = boothol.width / bg.width
+      const bgVShighstoololHeight = highstoolol.height / bg.height
+      const bgVShighstoololWidth = highstoolol.width / bg.width
+      const bgVSnextHeight = next.height/bg.height
+      const bgVSnextWidth = next.width/bg.width
+      const bgVSbackHeight = back.height/bg.height
+      const bgVSbackWidth = back.width/bg.width
+
       const bgAR = bg.width / bg.height
       const stoololAR = stoolol.width / stoolol.height
       const rectsofaolAR = rectsofaol.width / rectsofaol.height
@@ -210,7 +212,9 @@
       next.style.zIndex = 15
       back.style.position = 'absolute'
       back.style.zIndex = 14
+      console.log(`${winAR}, ${bgAR}`)
       if (winAR > bgAR) { // when screen is wider than bg ratio
+          console.log("screen is wider than bg")
         bg.style.width = innerHeight * bgAR + 'px'
         bg.style.height = innerHeight + 'px'
         stoolol.style.width = bgVSstoololWidth * innerHeight * bgAR + 'px'
@@ -266,6 +270,7 @@
         back.style.left = (innerWidth / 2) - (bg.width / 2) + (bg.width * 0.486) + 'px'
         console.log(`back: ${back.style.top}, ${back.style.left}`)
       } else { // when screen is tighter than bg ratio
+          console.log("bg is wider than screen")
         bg.style.width = innerWidth + 'px'
         bg.style.height = innerWidth / bgAR + 'px'
         stoolol.style.width = bgVSstoololWidth * innerWidth + 'px'
