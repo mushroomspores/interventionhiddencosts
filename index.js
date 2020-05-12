@@ -4,10 +4,6 @@ const text = document.querySelector('#text')
 console.log(bg)
 console.log(text)
 
-const bgVStextHeight = text.height / bg.height
-const bgVStextWidth = text.width / bg.width
-// console.log(`${bgVStextHeight}, ${bgVStextWidth}`)
-
 function overText () {
 text.style.cursor = 'pointer'
 text.src = 'titlepage/entervirtualtour.png'
@@ -20,6 +16,9 @@ const textAR = text.width / text.height
 //   console.log("textAR " + textAR)
 const winAR = innerWidth / innerHeight
 //   console.log("winAR " + winAR)
+const bgVStextHeight = text.height / bg.height
+const bgVStextWidth = text.width / bg.width
+// console.log(`${bgVStextHeight}, ${bgVStextWidth}`)
 bg.style.position = 'absolute'
 text.style.position = 'absolute'
 text.style.zIndex = 2
